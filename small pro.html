@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- css-envelop -->
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .con {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            padding: 1%;
+            background-color: rgb(1, 37, 12);
+        }
+
+        .item {
+            filter: drop-shadow(3px 3px 2px black);
+        }
+
+
+        /* bouncing ball   */
+
+        .con1 {
+            background-color: gray;
+            height: 20vh;
+            width: 20vw;
+            display: flex;
+            padding: 1%;
+            background-color: red;
+        }
+
+        .con1 ul {
+            display: flex;
+            border-bottom: 15px solid rgb(13, 12, 12);
+            border-radius: 10px;
+            position: relative;
+            width: 10vw;
+        }
+
+        .con1 ul li {
+            height: 18px;
+            width: 20px;
+            background-color: rgb(123, 255, 0);
+            border-radius: 50%;
+            list-style: none;
+            margin: .4rem;
+            position: relative;
+            top: 3.8rem;
+            animation: bounce 1s ease infinite alternate-reverse;
+        }
+
+        @keyframes bounce {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-60px);
+            }
+
+            10% {
+                transform: translateY(0px);
+            }
+        }
+
+        ul li:nth-child(1) {
+            animation-delay: 0s;
+        }
+
+        ul li:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        ul li:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        ul li:nth-child(4) {
+            animation-delay: 0.6s;
+        }
+
+        ul li:nth-child(5) {
+            animation-delay: 0.8s;
+        }
+
+        /* change background */
+        .con2 {
+            height: 20vh;
+            width: 20vw;
+            animation: changebg 10s linear infinite;
+            display: grid;
+            place-items: center;
+            background-color: orangered;
+        }
+
+        @keyframes changebg {
+            0% {
+                background-color: red;
+            }
+
+            20% {
+                background-color: rgb(255, 106, 0);
+            }
+
+            40% {
+                background-color: rgb(179, 255, 0);
+            }
+
+            60% {
+                background-color: rgb(0, 255, 8);
+            }
+
+            80% {
+                background-color: rgb(0, 255, 85);
+            }
+
+            1000% {
+                background-color: rgb(0, 255, 221);
+            }
+        }
+
+        /* change background clip  */
+        .con3 {
+            height: 20vh;
+            width: 20vw;
+            background-color: darksalmon;
+            display: grid;
+            place-items: center;
+        }
+
+        .con3 p {
+            font-size: 2rem;
+            font-weight: 1000;
+            background-image: url(tree.jpg);
+            background-size: 100% 100%;
+            background-clip: text;
+            --webkit-background-clip: text;
+            color: transparent;
+        }
+
+        /* cee blend mode  */
+        .con4 {
+            background-image: url(colorful-.jpg);
+            background-size: 100% 100%;
+            height: 20vh;
+            width: 20vw;
+            display: grid;
+            place-items: center;
+        }
+
+        .con4 p {
+            font-size: 1.6rem;
+            font-weight: 800;
+            text-transform: capitalize;
+            mix-blend-mode: screen;
+            padding: 0px 40px;
+            background-color: white;
+        }
+
+        /* pie chart  */
+        .con5 {
+            height: 20vh;
+            width: 20vw;
+            background-color: darkkhaki;
+            filter: drop-shadow(5px 10px 10px black);
+        }
+
+        .con5 .names {
+            min-width: 7vw;
+            min-height: 10vh;
+            background-color: rgb(118, 115, 67);
+            filter: drop-shadow(5px 10px 10px black);
+            position: absolute;
+            bottom: 4rem;
+            right: 0rem;
+            display: flex;
+            justify-content: center;
+            align-items: end;
+            flex-direction: column;
+            font-size: 20px;
+            font-weight: 700;
+            padding: 0 5px;
+        }
+
+        .pie {
+            background-color: red;
+            min-height: 15vh;
+            min-width: 10vw;
+            position: relative;
+            top: 3rem;
+            margin: 0 auto;
+            background: radial-gradient(circle closest-side, transparent 100%, darkkhaki 0),
+                conic-gradient(from 180deg,
+                    red 0,
+                    red 45%,
+                    rgb(174, 255, 0) 0,
+                    rgb(174, 255, 0) 60%,
+                    rgb(0, 106, 255) 0,
+                    rgb(0, 106, 255) 90%,
+                    rgb(0, 255, 119) 0,
+                    rgb(0, 255, 119) 100%)
+        }
+
+        .names {
+            height: 3vh;
+        }
+
+        .names span {
+            min-height: 5px;
+            min-width: 5px;
+            border-radius: 50%;
+            position: relative;
+            left: -5rem;
+            top: 0.5rem
+        }
+
+        .names p {
+            font-size: 10px;
+
+        }
+
+        /* css selection */
+        ::selection {
+            background-color: rgb(43, 156, 226);
+            color: red;
+        }
+
+        .con6 {
+            height: 20vh;
+            width: 20vw;
+            background-color: darkseagreen;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            filter: drop-shadow(2px 8px 8px black);
+        }
+
+        .con6 .image {
+            background-image: url(bird.jpg);
+            background-size: 100% 100%;
+            height: 20vh;
+            width: 30vw;
+
+        }
+
+        .con6 .para {
+            width: 80vw;
+            font-size: 10px;
+            text-align: center;
+        }
+
+        .con7 {
+            height: 20vh;
+            width: 20vw;
+            background-color: rgb(94, 240, 94);
+        }
+
+        .con7 h5 {
+            font-size: 1rem;
+            display: block;
+            text-align: center;
+        }
+
+        .con7 button {
+            height: 15vh;
+            width: 18vw;
+            position: relative;
+            left: .8rem;
+            font-size: 2rem;
+            font-weight: 600;
+            background-color: orangered;
+            border: none;
+            box-sizing: border-box;
+        }
+
+        .con7 button::before {
+            content: "";
+            position: absolute;
+            box-sizing: border-box;
+            transition: all 0.4s;
+            height: 15vh;
+            width: 18vw;
+            top: 0rem;
+            left: 0rem;
+            border-top: 5px solid green;
+            border-left: 5px solid green;
+            box-sizing: border-box;
+        }
+
+        .con7 button::after {
+
+            content: "";
+            position: absolute;
+            box-sizing: border-box;
+            transition: all 0.4s;
+            height: 15vh;
+            width: 18vw;
+            bottom: 0rem;
+            right: 0rem;
+            left: 0;
+            border-bottom: 5px solid rgb(5, 67, 5);
+            border-right: 5px solid rgb(5, 67, 5);
+            box-sizing: border-box;
+        }
+
+        .con7 button:hover::before,
+        button:hover::after {
+            width: 5%;
+            height: 5%;
+        }
+
+        /* card hover  */
+        .con8 {
+            height: 20vh;
+            width: 20vw;
+            background-color: rgb(105, 13, 11);
+            border: 4px solid white;
+            border-radius: 5px;
+            filter: drop-shadow(6px 6px 5px black);
+        }
+
+        .con8-1 {
+            height: 48vh;
+            width: 22vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .con8 h2 {
+            color: white;
+            position: relative;
+            top: -3.5rem;
+            right: 1.8rem;
+        }
+
+        .con8-1 p {
+            color: white;
+            text-align: center;
+            width: 20vw;
+            position: relative;
+            bottom: 7rem;
+            right: 1.2rem
+        }
+
+        .con8-1 a {
+            text-decoration: none;
+            border: 3px solid white;
+            border-radius: 3px;
+            font-size: 10px;
+            padding: 5px;
+            color: white;
+            position: relative;
+            bottom: 5rem;
+            right: 1.6rem;
+        }
+
+        .con8-2 {
+            height: 20vh;
+            width: 20vw;
+            background-color: rgb(0, 255, 76);
+            position: absolute;
+            top: -4px;
+            left: -4px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.30rem;
+            font-weight: 800;
+            transition: all 0.4s;
+        }
+
+        .con8:hover>.con8-2 {
+            height: 8vh;
+            width: 10vw;
+            background-color: rgb(105, 13, 11);
+            position: relative;
+            top: -21rem;
+            left: 4rem;
+            font-size: 12px;
+            font-weight: 800;
+            border: 3px solid white;
+            color: white;
+            letter-spacing: 2px;
+
+        }
+
+        .con8-1 a:hover {
+
+            background-color: rgb(0, 255, 76);
+            color: black;
+            font-weight: 800;
+        }
+
+        /* hover nav  */
+        .con9 {
+            height: 20vh;
+            width: 20vw;
+            background-color: rgb(4, 4, 58);
+            position: relative;
+            left: 0;
+            top: 0;
+        }
+
+        .con9 nav {
+            height: 10vh;
+            display: flex;
+            justify-content: space-between;
+
+        }
+
+        .con9 nav ul {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            width: 100vw;
+        }
+
+        .con9 nav ul li {
+            list-style: none;
+            font-size: .6rem;
+            font-weight: 700;
+            position: relative;
+            padding: 10px;
+            color: white;
+        }
+
+        .con9 nav ul li::before {
+            content: "";
+            position: absolute;
+            transition: all 0.4s;
+            transform-origin: right bottom;
+            height: 100%;
+            width: 100%;
+            top: 0;
+            left: 0;
+            border-top: 3px solid white;
+            border-left: 3px solid white;
+        }
+
+        .con9 nav ul li::after {
+            content: "";
+            position: absolute;
+            transition: all 0.4s;
+            transform-origin: right bottom;
+            height: 100%;
+            width: 100%;
+            right: 0;
+            bottom: 0;
+            border-right: 3px solid green;
+            border-bottom: 3px solid green;
+        }
+
+        .con9 nav ul li:hover::before,
+        .con9 nav ul li:hover::after {
+            width: 10%;
+            height: 11%;
+            transform: rotate(360deg);
+
+        }
+
+        .con9 h5 {
+            color: white;
+            text-align: center;
+        }
+
+        /* image card hover  */
+        .con10 {
+            height: 20vh;
+            width: 20vw;
+            background-color: rgb(0, 20, 20);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            border: 4px solid rgb(1, 25, 34);
+            filter: drop-shadow(7px 7px 8px black);
+            transition: all 0.4s;
+        }
+
+        .imgbox {
+            position: relative;
+            height: 100%;
+            width: 100%;
+            left: 6rem;
+            transition: all 0.4s;
+            filter: drop-shadow(7px 7px 8px black);
+            transform: translateY(-40px);
+
+
+        }
+
+        img {
+            height: 8vh;
+            position: absolute;
+            top: 1rem;
+            right: 12rem;
+        }
+
+        .text {
+            width: 20vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            position: relative;
+            transform: translateY(-14rem);
+            z-index: -1;
+            opacity: 0;
+            top: -6rem;
+            transition: all 0.4s;
+        }
+
+        .text h2 {
+            font-weight: 800;
+            color: white;
+            filter: drop-shadow(7px 7px 8px black);
+        }
+
+        .text p {
+            text-align: center;
+            letter-spacing: 1px;
+            color: white;
+            filter: drop-shadow(7px 7px 8px black);
+        }
+
+        .here {
+            color: wheat;
+            font-size: 2rem;
+            font-weight: 800;
+            position: absolute;
+            top: 3rem;
+            transition: all 0.1s;
+            filter: drop-shadow(7px 7px 8px black);
+            transform: translateX(0rem);
+
+        }
+
+        .con10:hover {
+            height: 50vh;
+        }
+
+        .con10:hover>.text {
+            transform: translateY(0rem);
+            opacity: 1;
+        }
+
+        .con10:hover>.imgbox {
+            transform: translateY(-4rem);
+        }
+
+        .con10:hover>.here {
+            transform: translateX(-20rem);
+            opacity: 0;
+        }
+
+        /* linear gredient  */
+        .con11 {
+            height: 20vh;
+            width: 20vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: rgb(164, 15, 15);
+        }
+
+        .c-img {
+            height: 10vh;
+            width: 18vw;
+            filter: drop-shadow(3px 10px 10px black);
+            background-image: linear-gradient(232deg, rgba(74, 12, 2, 0.469) 50%, rgba(255, 0, 0, 0.195) 50%), url(istockphoto.jpg);
+            background-size: 100% 100%;
+        }
+
+        /* pulse animation  */
+        .con12 {
+            height: 20vh;
+            width: 20vw;
+            background-color: rgb(20, 173, 220);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .con12 a {
+            text-decoration: none;
+            font-size: 2rem;
+            color: black;
+            background-color: coral;
+            padding: 15px 50px;
+            border-radius: 30px;
+            position: relative;
+        }
+
+        .con12 a::before {
+            content: " ";
+            text-decoration: none;
+            font-size: 2rem;
+            color: black;
+            width: 100%;
+            height: 100%;
+            top: 0%;
+            left: 0%;
+            background-color: rgb(1, 37, 36);
+            border-radius: 30px;
+            position: absolute;
+            z-index: -1;
+            transition: all 0.3s;
+        }
+
+        .con12 a:hover::before {
+            opacity: 0;
+            transform: scaleX(1.2) scaleY(1.6);
+        }
+
+        .con12 a:hover {
+            filter: drop-shadow(0px 11px 11px black);
+            transform: translateY(-4px);
+        }
+
+        .con12 a:active {
+            filter: drop-shadow(0px 6px 6px black);
+            transform: translateY(-2px);
+        }
+
+        /* show hide effect  */
+        .con13 {
+            width: 20vw;
+            height: 20vh;
+            background-color: rgb(108, 6, 26);
+            border-radius: 5px;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            filter: drop-shadow(3px 3px 4px black);
+            clip-path: circle(22.6% at 100% 0);
+            transition: all 0.4s;
+
+        }
+
+        .con13 h5 {
+            color: rgb(246, 80, 24);
+            filter: drop-shadow(3px 3px 4px black);
+        }
+
+        span {
+            position: relative;
+            left: -12px;
+            filter: drop-shadow(3px 3px 4px black);
+        }
+
+        p {
+            color: white;
+            filter: drop-shadow(3px 3px 4px black);
+            letter-spacing: 1px;
+            font-size: 10px;
+        }
+
+        h5 {
+            position: relative;
+            left: 0rem;
+            color: white;
+            filter: drop-shadow(2px 2px 3px black);
+        }
+
+        .name {
+            position: relative;
+            left: 13px;
+            filter: drop-shadow(2px 2px 3px black);
+        }
+
+        .con13:hover {
+            clip-path: circle(141.4% at 100% 0);
+        }
+
+        .con13-1 h6 {
+            position: absolute;
+            color: white;
+            top: 0rem;
+            left: 15rem;
+            font-weight: 800;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="con">
+        <div class="con1 item">
+            <h5>Bouncing ball in css</h5>
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+        <div class="con2 item">
+            <h5>Change background-color in css</h5>
+        </div>
+        <div class="con3 item">
+            <p>Hello World</p>
+        </div>
+
+        <div class="con4 item">
+            <p>transparent text</p>
+        </div>
+        <div class="con5 item">
+            <div class="pie"></div>
+            <div class="names">
+                <span class="one" style="background-color: red;"></span>
+                <p> Entertainment </p>
+                <span class="two" style="background-color: rgb(174, 255, 0);"></span>
+                <p>Clothes</p>
+                <span class="three" style="background-color: rgb(0, 106, 255);"></span>
+                <p> Food</p>
+                <span class="four" style="background-color: rgb(0, 255, 119);"></span>
+                <p>Savings</p>
+            </div>
+        </div>
+        <div class="con6 item">
+            <div class="image"></div>
+            <div class="para">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt quo ipsa odit illum
+                illo tenetur magnam eaque, doloribus vitae sequi fugit facilis quis </div>
+        </div>
+        <div class="con7 item">
+            <h5>Hover button in css</h5>
+            <button>Click</button>
+        </div>
+        <div class="con8 item">
+            <div class="con8-1">
+                <h2>Tausif</h2>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus fugit ipsum</p>
+                <a href="#">Click Me</a>
+            </div>
+            <div class="con8-2">TausifPathan8368</div>
+        </div>
+        <div class="con9 item">
+            <nav>
+                <ul>
+                    <li>HOME</li>
+                    <li>ABOUT</li>
+                    <li>SERVICE</li>
+                    <li>CONTECT US</li>
+                </ul>
+            </nav>
+            <h5>Hover me</h5>
+        </div>
+        <div class="con10 item">
+            <div class="imgbox">
+                <img src="adult.jpg" alt="">
+            </div>
+            <div class="text">
+                <h2>Weather</h2>
+                <p>
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolores doloremque sequi nesciunt autem
+                    alias non labore praesentium laboriosam, delectus iusto.
+                </p>
+            </div>
+            <div class="here">Hover here</div>
+        </div>
+        <div class="con11 item">
+            <h5>linear gradient and image overlay</h5>
+            <div class="c-img"></div>
+        </div>
+        <div class="con12 item">
+            <a href="#">Submit</a>
+        </div>
+        <div class="con13 item">
+            <div class="con13-1">
+                <h5>About me</h5>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est ipsa error repellendus non culpa,
+                    laboriosam velit excepturi? Voluptate, excepturi facere.</p>
+                <h5>Thank you <br><span class="name">Tausif</span></h5>
+                <h6>Hover me</h6>
+            </div>
+        </div>
+</body>
+
+</html>

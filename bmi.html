@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator By Tausif</title>
+    <link rel="stylesheet" href="bmi.css">
+</head>
+<body>
+    <div class="con">
+        <h1>BMI Calculator</h1>
+        <p class="text  one">Height</p>
+        <input type="text" id="height" placeholder="Enter Your Height">
+        <p class="text">Width</p>
+        <input type="text" id="width" placeholder="Enter Your Width" >
+        <p id="results"></p>
+        <button id="btn" onclick="bmi()">Click Me</button>
+        <p id="info">Please Enter Height[cm] And Width[kg]</p>
+    </div>
+
+    <script>
+    function bmi() {
+        let h = document.getElementById("height").value;
+        let w = document.getElementById("width").value;
+        let bmi = w / (h/100 * h/100);
+        let total = bmi.toFixed(2);
+        document.getElementById("results").innerHTML = "Your BMI Is"+total;
+
+    }
+            
+    
+    </script>
+</body>
+</html>

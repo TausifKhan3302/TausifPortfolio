@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .con {
+            width: 100vw;
+            height: 100vh;
+            background-color: brown;
+            display: flex;
+            justify-content: center;
+        }
+
+        form {
+            width: 30vw;
+            height: fit-content;
+            margin-top: 5rem;
+        }
+
+        form #btn {
+            padding: 10px 15px;
+            border-radius: 10px;
+            border: 2px solid rgb(95, 239, 5);
+            font-weight: 800;
+            cursor: pointer;
+            filter: drop-shadow(3px 3px 1px black);
+            background-color: rgba(255, 255, 255, 0.341);
+        }
+
+        form input {
+            width: 18vw;
+            padding: 10px 15px;
+            border-radius: 10px;
+            border: 2px solid rgb(95, 239, 5);
+            font-weight: 800;
+            cursor: pointer;
+            outline: none;
+            filter: drop-shadow(3px 3px 1px black);
+            background-color: rgba(255, 255, 255, 0.341);
+        }
+
+        form input::placeholder {
+            color: black;
+        }
+
+        @media only screen and (max-width:768px) {
+            form {
+                width: 50vw;
+            }
+
+            form input {
+                width: 30vw;
+                font-size: 1rem;
+            }
+
+            form #btn {
+                font-size: 1rem;
+            }
+
+            .todo-con-child {
+                margin-top: 1rem;
+                width: 40vw;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .todo-con-child li {
+                font-size: 1rem;
+                font-weight: 700;
+                margin-left: 2rem;
+            }
+
+            .todo-con-child .deletebtn {
+                padding: 8px 12px;
+                border-radius: 10px;
+                border: 2px solid rgb(239, 17, 5);
+                font-weight: 800;
+                cursor: pointer;
+                filter: drop-shadow(3px 3px 1px black);
+                background-color: rgba(255, 255, 255, 0.341);
+                margin-left: 3rem;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="con">
+        <form>
+            <input type="text" id="input" placeholder="Enter your word/number">
+            <button id="btn">Add </button>
+            <div class="todo-con"></div>
+
+        </form>
+    </div>
+
+
+
+    <script>
+        let inputvalue = document.getElementById("input")
+        let btn = document.getElementById("btn")
+        let maintodoElem = document.querySelector(".todo-con")
+
+
+
+        let gettodolistfromlocal = () => {
+            return JSON.parse(localStorage.getItem("todo"))
+        }
+
+        let addtodolistLocalStorage = (localtodolist) => {
+            return localStorage.setItem("todo", JSON.stringify(localtodolist))
+        }
+        let localtodolist = gettodolistfromlocal() || []
+
+        let addTodoDynemicElem = (curElem) => {
+            let divElem = document.createElement("div")
+            divElem.classList.add("todo-con-child")
+            divElem.innerHTML = `<li>${curElem}</li><button class="deletebtn">Delete</button>`
+            maintodoElem.append(divElem)
+        }
+
+        let addtodoList = (e) => {
+            e.preventDefault()
+            let todolistvalue = inputvalue.value.trim()
+            inputvalue.value = ""
+
+            if (todolistvalue !== " " && !localtodolist.includes(todolistvalue)) {
+                localtodolist = [...new Set(localtodolist)]
+                localtodolist.push(todolistvalue)
+                console.log(localtodolist)
+                localStorage.setItem("todo", JSON.stringify(localtodolist))
+
+                addTodoDynemicElem()
+            }
+        }
+
+        let shoTodoList = () => {
+            localtodolist.forEach((curElem) => {
+                addTodoDynemicElem(curElem)
+            });
+        }
+
+        shoTodoList()
+
+        //    remove data 
+        let removetodoElem = (e) => {
+            let todoToremove = e.target
+            let todoListContent = todoToremove.previousElementSibling.innerText
+            let parentElem = todoToremove.parentElement
+            console.log(todoListContent)
+
+            localtodolist = localtodolist.filter((curTodo) => {
+                return curTodo !== todoListContent.toLowerCase()
+            })
+
+            addtodolistLocalStorage(localtodolist)
+            parentElem.remove()
+        }
+
+        btn.addEventListener("click", (e) => {
+            addtodoList(e);
+        })
+
+        maintodoElem.addEventListener("click", (e) => {
+            e.preventDefault();
+            if (e.target.classList.contains("deletebtn")) {
+                removetodoElem(e);
+            }
+        })
+
+    </script>
+</body>
+
+</html>

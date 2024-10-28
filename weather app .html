@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Mooli&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+            font-style: normal;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: url(weather.webp);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+        }
+
+        .con {
+            width: 50vw;
+            background-color: rgba(255, 255, 255, 0.459);
+            height: 75vh;
+            border: 2px solid white;
+            border-radius: 10px;
+            filter: drop-shadow(5px 5px 2px black);
+        }
+
+        .section-1 {
+            position: relative;
+            top: .3rem;
+            right: .3rem;
+            display: flex;
+            align-items: center;
+            justify-content: right;
+        }
+
+        .section-1 i {
+            background-color: black;
+            color: white;
+            padding: 5px;
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+            height: 4.7vh;
+            position: relative;
+            left: .3rem;
+            width: 3vw;
+        }
+
+        .section-1 .search {
+            background-color: black;
+            color: white;
+            height: 4.6vh;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+            border: none;
+            text-align: center;
+            color: white;
+            outline: none;
+        }
+
+        /* section - 2  */
+        .section-2 {
+            width: 30vw;
+            height: 40vh;
+            margin: 1rem auto;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            font-weight: 800;
+        }
+
+        .city {
+            position: relative;
+            bottom: 1rem;
+            width: 70vw;
+            text-align: center;
+        }
+
+        .forecast {
+            position: relative;
+            left: 2rem;
+            font-weight: 600;
+        }
+
+        .minmax {
+            width: 15vw;
+            /* background-color: yellow; */
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            font-weight: 600;
+        }
+
+        .icon img {
+            width: 100px;
+            height: 100px;
+        }
+
+        .temperature {
+            font-weight: 700;
+        }
+
+
+        /* sedction - 3 */
+        .section-3 {
+            width: 50vw;
+            height: 25vh;
+            position: absolute;
+            bottom: .1rem;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            left: -.1rem;
+            display: flex;
+        }
+
+        .card {
+            width: 25vw;
+            height: 12.5vh;
+            background-color: rgb(101, 163, 142);
+            /* border: 1px solid black; */
+            display: flex;
+            border: 1px solid white;
+            font-size: 1rem;
+            font-weight: 800;
+        }
+
+        .card:nth-child(2) {
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+
+        .w-feels-like {
+            position: relative;
+            top: 1.4rem;
+            left: -4rem;
+            font-weight: 600;
+        }
+
+        .w-humidity {
+            position: relative;
+            top: 1.4rem;
+            left: -3.9rem;
+            font-weight: 600;
+
+        }
+
+        .w-wind {
+            position: relative;
+            top: 1.4rem;
+            left: -2.2rem;
+            font-weight: 600;
+
+        }
+
+        .w-pressure {
+            position: relative;
+            top: 1.4rem;
+            left: -4rem;
+            font-weight: 600;
+
+        }
+
+        @media only screen and (max-width:1024px) {
+            .con {
+                width: 60vw;
+            }
+
+            .section-1 i {
+                height: 5.1vh;
+                left: .4rem;
+                top: .1rem;
+            }
+
+            .section-1 .search {
+                height: 5vh;
+            }
+
+            .date-time {
+                width: 22vw;
+                font-size: .9rem;
+                position: relative;
+                bottom: .8rem;
+            }
+
+            .forecast {
+                font-size: .8rem;
+                bottom: .8rem;
+            }
+
+            .icon img {
+                position: relative;
+                bottom: 1.5rem;
+            }
+
+            .temperature {
+                position: relative;
+                bottom: 2rem;
+                font-size: .8rem;
+            }
+
+            .minmax {
+                position: relative;
+                bottom: 1.6rem;
+                font-size: .6rem;
+            }
+
+            .card {
+                width: 29.9vw;
+            }
+
+            .w-feels-like,
+            .w-humidity,
+            .w-wind,
+            .w-pressure {
+                font-size: .7rem;
+            }
+
+            .fa-droplet,
+            .fa-wind,
+            .fa-gauge-high {
+                font-size: .7rem;
+                position: relative;
+                top: .4rem;
+            }
+
+            .option {
+                font-size: .8rem;
+                position: relative;
+                top: .2rem;
+            }
+
+            .w-feels-like {
+                left: -3.8rem;
+            }
+
+            .w-wind {
+                left: -2.6rem;
+            }
+
+        }
+
+        @media only screen and (max-width:768px) {
+
+            .con {
+                width: 75vw;
+            }
+
+            .section-1 .search {
+                height: 5.6vh;
+            }
+
+            .section-1 i {
+                height: 5.6vh;
+            }
+
+            .card {
+                width: 37.4vw;
+            }
+
+            .city {
+                font-size: 1.2rem;
+                width: 70vw;
+                text-align: center;
+            }
+
+            .date-time {
+                width: 29vw;
+                font-size: .9rem;
+                position: relative;
+                bottom: .8rem;
+            }
+
+            .section-3 {
+                font-size: .8rem;
+            }
+        }
+
+
+        @media only screen and (max-width:768px) {
+            .section-1 i {
+                top: 0;
+            }
+        }
+
+        @media only screen and (max-width:600px) {
+            .section-1 i {
+                top: 0;
+            }
+
+            .date-time {
+                width: 37vw;
+            }
+
+            .minmax {
+                width: 18vw;
+            }
+        }
+
+        @media only screen and (max-width:500px) {
+            .section-1 i {
+                top: 0;
+            }
+
+            .date-time {
+                width: 44vw;
+            }
+
+            .city {
+                bottom: .8rem;
+            }
+
+            .minmax {
+                width: 23vw;
+            }
+        }
+
+        @media only screen and (max-width:481px) {
+            .section-1 .search {
+                height: 5vh;
+                width: 23vw;
+                font-size: .6rem;
+            }
+
+            .section-1 i {
+                height: 4.9vh;
+                top: .2rem;
+            }
+
+            .date-time {
+                width: 47vw;
+            }
+
+            .city {
+                width: 70vw;
+                text-align: center;
+            }
+
+            .fa-droplet,
+            .fa-wind,
+            .fa-gauge-high {
+                font-size: .7rem;
+                position: relative;
+                top: .4rem;
+            }
+
+            .option {
+                font-size: .8rem;
+                position: relative;
+                top: .2rem;
+            }
+
+            .w-feels-like {
+                left: -3.8rem;
+            }
+
+            .w-wind {
+                left: -2.6rem;
+            }
+        }
+
+
+        @media only screen and (max-width:450px) {
+            .date-time {
+                width: 49vw;
+            }
+        }
+        @media only screen and (max-width:400px) {
+            .section-1 {
+                top: .1rem;
+            }
+
+            .section-1 .search {
+                width: 25vw;
+            }
+
+            .section-1 i {
+                width: 4vh;
+            }
+
+            .date-time {
+                width: 56vw;
+            }
+
+            .fa-droplet,
+            .fa-wind,
+            .fa-gauge-high {
+                font-size: .7rem;
+                position: relative;
+                top: .4rem;
+            }
+
+            .option {
+                font-size: .8rem;
+                position: relative;
+                top: .2rem;
+            }
+
+            .w-feels-like {
+                left: -3.8rem;
+            }
+
+            .w-wind {
+                left: -2.6rem;
+            }
+        }
+
+        @media only screen and (max-width:350px) {
+            .date-time {
+                width: 49vw;
+                font-size: .7rem;
+            }
+            .section-1 .search {
+    width: 31vw;
+}
+        }
+
+        @media only screen and (max-width:320px) {
+            .con {
+                width: 88vw;
+            }
+
+            .section-1 .search {
+                width: 30vw;
+            }
+
+            .city {
+                font-size: .8rem;
+                width: 67vw;
+                font-weight: 800;
+                bottom: .5rem;
+                text-align: center;
+            }
+
+            .date-time {
+                width: 54vw;
+                font-size: .7rem;
+            }
+
+            .card {
+                width: 43.8vw;
+            }
+
+            .fa-droplet,
+            .fa-wind,
+            .fa-gauge-high {
+                font-size: .7rem;
+                position: relative;
+                top: .4rem;
+            }
+
+            .option {
+                font-size: .8rem;
+                position: relative;
+                top: .2rem;
+            }
+
+            .w-wind {
+                left: -2.5rem;
+            }
+
+            .w-feels-like {
+                left: -3.8rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="con">
+
+        <!-- section - 1  -->
+        <section class="section-1">
+            <form class="search-con">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="search" class="search" placeholder="search your city">
+            </form>
+        </section>
+
+        <!-- section - 2  -->
+        <section class="section-2">
+            <h1 class="city"></h1>
+            <p class="date-time"></p>
+            <div class="data">
+                <p class="forecast"></p>
+                <div class="icon"></div>
+            </div>
+            <p class="temperature"></p>
+            <div class="minmax">
+                <p class="min"></p>
+                <p class="max"></p>
+            </div>
+
+        </section>
+
+        <!-- section - 3  -->
+        <section class="section-3">
+            <div class="card-1">
+                <div class="card">
+                    <i class="fa-solid fa-droplet"></i>
+                    <p class="option">Feels like</p>
+                    <p class="w-feels-like">15&#176</p>
+                </div>
+
+                <div class="card">
+                    <i class="fa-solid fa-droplet"></i>
+                    <p class="option">Humidity</p>
+                    <p class="w-humidity">15&#176</p>
+                </div>
+            </div>
+
+            <div class="card-2">
+                <div class="card">
+                    <i class="fa-solid fa-wind"></i>
+                    <p class="option">Wind</p>
+                    <p class="w-wind">15&#176</p>
+                </div>
+
+                <div class="card">
+                    <i class="fa-solid fa-gauge-high"></i>
+                    <p class="option">Pressure</p>
+                    <p class="w-pressure">15&#176</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+    <script>
+
+
+
+
+        let city = document.querySelector(".city")
+        let dateTime = document.querySelector(".date-time")
+        let forecast = document.querySelector(".forecast")
+        let icon = document.querySelector(".icon")
+        let temperature = document.querySelector(".temperature")
+        let min = document.querySelector(".min")
+        let max = document.querySelector(".max")
+
+        let wFeelsLike = document.querySelector(".w-feels-like")
+        let wHumidity = document.querySelector(".w-humidity")
+        let wWind = document.querySelector(".w-wind")
+        let wPressure = document.querySelector(".w-pressure")
+        let searchForm = document.querySelector(".search-con")
+
+
+
+
+        // apiKey : 97ce6eec3b9c0b4038efee2633751fcd
+
+        let getCountryCode = (code) => {
+            return new Intl.DisplayNames([code], { type: 'region' }).of(code)
+        }
+        // get DateTime               
+        let getDateTime = (dt) => {
+            // dt =  1712376957
+            let date = new Date(dt * 1000)
+            // console.log(date)
+
+            return new Intl.DateTimeFormat('en-GB', {
+                weekday: "long",
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+                hour: "numeric",
+                minute: "numeric"
+            }).format(date)
+
+        }
+
+        let cityName = "delhi"
+        // city.innerHTML="Delhi"
+
+        searchForm.addEventListener("submit", (e) => {
+            e.preventDefault()
+
+            let search = document.querySelector(".search")
+            cityName = search.value
+
+            getWeatherData()
+
+            search.value = ""
+        })
+
+        let getWeatherData = async () => {
+
+            let wheatherURL = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&APPID=97ce6eec3b9c0b4038efee2633751fcd`
+            try {
+
+                let res = await fetch(wheatherURL)
+                let data = await res.json()
+                console.log(data)
+
+                let { main, name, weather, wind, sys, dt } = data
+
+                city.innerHTML = `${name} ${getCountryCode(sys.country)}`;
+                dateTime.innerHTML = getDateTime(dt);
+                temperature.innerHTML = `${main.temp}&#176`;
+                min.innerHTML = `Min ${main.temp_min.toFixed()}&#176`;
+                max.innerHTML = `Max ${main.temp_max.toFixed()}&#176`;
+                wFeelsLike.innerHTML = `${main.feels_like.toFixed(2)}&#176`;
+                wHumidity.innerHTML = `${main.humidity}%`;
+                wWind.innerHTML = `${wind.speed} m/s`;
+                wPressure.innerHTML = `${main.pressure} hPa`;
+                forecast.innerHTML = `${weather[0].main} `;
+                icon.innerHTML = `<img src=" http://openweathermap.org/img/wn/${weather[0].icon}@4x.png"/>`
+
+            } catch (error) {
+                console.log(error)
+            }
+        }
+
+
+
+        document.body.addEventListener("load", getWeatherData())
+    </script>
+
+
+</body>
+
+</html>

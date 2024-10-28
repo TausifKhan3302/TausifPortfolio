@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Mooli&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <style>
+    body {
+      height: 100vh;
+      width: 100vw;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color:#330000;
+      flex-direction: column;
+    }
+
+    h1 {
+      color: white;
+      position: relative;
+      bottom: 2.5rem;
+      filter: drop-shadow(5px 5px 2px black);
+      font-family: "Poppins", sans-serif;
+    }
+
+    section {
+      height: 60vh;
+      width: 25vw;
+      background-color: #73605B;
+      border: 2px solid #D09683;
+      border-radius: 10px;
+      filter: drop-shadow(5px 5px 2px black);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    #count {
+      font-size: 3.5rem;
+      position: fixed;
+      bottom: 18rem;
+      font-family: "Poppins", sans-serif;
+    }
+
+    .con {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      position: fixed;
+      bottom: 11rem;
+    }
+
+    .button {
+      padding: 10px 15px;
+      border: 2px solid #D09683;
+      border-radius: 10px;
+      width: 7vw;
+      margin: .2rem;
+      filter: drop-shadow(5px 5px 2px black);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: 700;
+      font-size: 1rem;
+      cursor: pointer;
+      background-color:#d096837f;
+      color: black;
+      font-family: "Poppins", sans-serif;
+    }
+
+    .getvalue {
+      position: fixed;
+      top: 13rem;
+      font-weight: 800;
+      height: 27vh;
+      font-family: "Poppins", sans-serif;
+    }
+    @media only screen and (max-width:768px) {
+      section {
+    height: 64vh;
+    width: 39vw;
+    position: relative;
+    bottom: 2.5rem;
+      }
+      #count {
+    bottom: 16rem;
+      }
+      .con{
+        bottom: 9rem;
+      }
+      .button {
+    width: 11vw;
+    font-size: .8rem;
+}
+    }
+
+    @media only screen and (max-width:600px) {
+      section {
+        width: 50vw;
+      }
+      .button{
+        width: 14.5vw;
+      }
+    }
+    @media only screen and (max-width:481px) {
+      section {
+        width: 59vw;
+      }
+      .button {
+    width: 16.5vw;
+}
+    }
+    
+  
+  @media only screen and (max-width:400px) {
+    section {
+    width: 71vw;
+}
+.button {
+    width: 20vw;
+}
+      h1{
+        font-size: 1.6rem;
+      }
+  }
+
+  @media only screen and (max-width:320px) {
+h1{
+  font-size: 1.3rem;
+}
+section {
+    width: 87vw;
+}
+.button {
+  width: 26vw;
+}
+  }
+  </style>
+</head>
+
+<body>
+  <h1>StopWatch With Timer</h1>
+  <section>
+    <div id="count">0</div>
+    <div class="con">
+      <button class="start button">Start</button>
+      <button class="reset button">Reset</button>
+      <button class="stop button">Stop</button>
+      <button class="getTime button">GetTime</button>
+      <button class="clearbtn button">ClearBtn</button>
+    </div>
+    <div class="getvalue"></div>
+  </section>
+
+  <script>
+    let count = document.getElementById("count")
+    let reset = document.querySelector(".reset")
+    let getcount = document.querySelector(".getvalue")
+
+    let start = 0
+    let set;
+
+    //start timer
+    let startTimer = () => {
+      set = setInterval(() => {
+        count.innerText = start++
+      }, 1000);
+    }
+
+    //stopTimer
+    let stopTimer = () => {
+      clearInterval(set)
+    }
+
+    //resetTimer
+    let resetTimer = () => {
+      start = 0
+      count.innerText = 0
+      clearInterval(set)
+    }
+
+    //getTime
+    let getTime = () => {
+      let creatP = document.createElement("p")
+      creatP.innerText = `The stop time is ${start - 1}`
+      getcount.append(creatP)
+    }
+
+    //clearCount
+    let clearbtn = () => {
+      getcount.innerText = " "
+    }
+
+
+
+    document.querySelector(".start").addEventListener("click", startTimer)
+    document.querySelector(".stop").addEventListener("click", stopTimer)
+    document.querySelector(".reset").addEventListener("click", resetTimer)
+    document.querySelector(".getTime").addEventListener("click", getTime)
+    document.querySelector(".clearbtn").addEventListener("click", clearbtn)
+  </script>
+</body>
+
+</html>

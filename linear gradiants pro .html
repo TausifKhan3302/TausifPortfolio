@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-image: linear-gradient(to right, #07ba4f, #0e57b1);
+        }
+
+        .con {
+            width: 35vw;
+            height: 40vh;
+            background-color: rgba(241, 13, 13, 0.169);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            border-radius: 10px;
+        }
+
+        h1 {
+            position: relative;
+            bottom: 2rem;
+        }
+
+        p {
+            font-size: .8rem;
+            font-weight: 800;
+            cursor: pointer;
+            position: relative;
+            bottom: 2rem;
+        }
+
+        p:hover {
+            background-color: rgb(21, 37, 1);
+            padding: 5px 10px;
+            border-radius: 20px;
+            transition: .5s all linear;
+            color: white;
+        }
+
+        button {
+            padding: 10px 15px;
+            font-weight: 800;
+            border-radius: 40px;
+            border: 2px solid yellow;
+            width: 10vw;
+            margin: 5px;
+            cursor: pointer;
+        }
+
+        #btn1 {
+            background-color: #07ba4f;
+        }
+
+        #btn2 {
+            background-color: rgb(0, 76, 255);
+        }
+
+        @media only screen and (max-width:768px) {
+            .con {
+                width: 48vw;
+            }
+
+            button {
+                width: 13vw;
+            }
+        }
+
+        @media only screen and (max-width:600px) {
+            .con {
+                width: 62vw;
+            }
+
+            button {
+                width: 17vw;
+            }
+        }
+
+        @media only screen and (max-width:563px) {
+            p {
+    width: 52vw;
+            }
+        }
+        @media only screen and (max-width:481px) {
+            .con {
+                width: 58vw;
+                height: 30vh;
+            }
+
+            h1 {
+                bottom: 1rem;
+                font-size: 1.2rem;
+            }
+
+            button {
+                padding: 4px 3px;
+                width: 15vw;
+                margin: 1px;
+                font-size: .7rem;
+            }
+
+            p {
+                font-size: .6rem;
+                bottom: 0.9rem;
+            }
+        }
+
+        @media only screen and (max-width: 451px) {
+            .con {
+                width: 70vw;
+            }
+        }
+        @media only screen and (max-width: 400px) {
+            .con {
+                width: 70vw;
+            }
+
+            button {
+                font-size: .6rem;
+                width: 17vw;
+            }
+        }
+      
+        @media only screen and (max-width: 374px) {
+            p {
+    width: 47vw;
+            }
+        }
+        @media only screen and (max-width: 320px) {
+            button {
+                font-size: .6rem;
+                width: 23vw;
+                padding: 4px;
+            }
+
+            p {
+                width: 51vw;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="con">
+        <h1>Copy your code here</h1>
+        <p id="gradiant-code"> background-image: linear-gradient(to right , #07ba4f , #0e57b1)</p>
+        <div class="btn">
+            <button id="btn1">#07ba4f</button>
+            <button id="btn2">#0e57b1</button>
+        </div>
+    </div>
+
+    <script>
+        let btn = document.getElementById("btn1")
+        let btn1 = document.getElementById("btn2")
+        let p = document.getElementById("gradiant-code")
+        let rgb1 = "#07ba4f"
+        let rgb2 = "#07ba4f"
+
+        let haxfunction = () => {
+            let number = "0123456789abcdef"
+            let color = "#"
+            for (let i = 0; i < 6; i++) {
+                color = color + number[Math.floor(Math.random() * 16)]
+            }
+            return color
+        }
+
+        let firstbtnFuntion = () => {
+            rgb1 = haxfunction()
+            console.log(rgb1)
+            document.body.style.backgroundImage = ` linear-gradient(to right , ${rgb1} , ${rgb2}`
+            p.innerHTML = `background-image: linear-gradient(to right , ${rgb1} , ${rgb2})`
+            btn.innerText = `${rgb1}`
+        }
+        let secondbtnFuntion = () => {
+            rgb2 = haxfunction()
+            console.log(rgb2)
+            document.body.style.backgroundImage = `linear-gradient(to right , ${rgb1} , ${rgb2}`
+            p.innerHTML = `background-image: linear-gradient(to right , ${rgb1} , ${rgb2})`
+            btn1.innerText = `${rgb2}`
+        }
+
+        btn.addEventListener("click", firstbtnFuntion)
+        btn1.addEventListener("click", secondbtnFuntion)
+
+        p.addEventListener("click", () => {
+            navigator.clipboard.writeText(p.innerHTML)
+        })
+    </script>
+</body>
+
+</html>

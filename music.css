@@ -1,0 +1,139 @@
+* {
+    font-family: "Mooli", sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.main-con {
+    width: 100vw;
+    height: 100vh;
+    background-color: #31473A;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(background.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-fit: cover;
+}
+
+
+.con {
+    width: 30vw;
+    height: 70vh;
+    background-color: #edf4f27a;
+    display: flex;
+    align-items: center;
+    border-radius: 15px;
+    filter: drop-shadow(4px 4px 2px black);
+    flex-direction: column;
+
+}
+
+.con h1 {
+    filter: drop-shadow(2px 2px 1px black);
+    margin-bottom: .2rem;
+}
+
+.con h3 {
+    filter: drop-shadow(3px 3px 1px black);
+    color: white;
+    margin-bottom: 2.5rem;
+}
+
+
+
+img {
+    height: 10rem;
+    width: 10rem;
+    object-fit: cover;
+    border-radius: 50%;
+}
+#gif{
+  width:8rem;
+  height:2rem;
+  background:url(sound.gif);
+  background-position:center;
+  background-repeat:no-repeat;
+  background-size:100% 100%;
+  opacity: 0;
+}
+.rotate{  animation: music-rotate 2s linear infinite;}
+
+@keyframes music-rotate {
+    to {
+        transform: rotate(0deg);
+    }
+
+    from {
+        transform: rotate(360deg);
+
+    }
+}
+
+.icons {
+    margin-top: 1rem;
+    width: 10vw;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    bottom: 1.3rem;
+}
+
+.icons i {
+    cursor: pointer;
+}
+.icons i:first-child:hover,i:last-child:hover {
+    filter: drop-shadow(1px 1px 1px rgb(5, 5, 5));
+}
+
+
+.icons #play {
+    background-color: rgb(248, 241, 241);
+    width: 2rem;
+    height: 2rem;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    border-radius: 50%;
+}
+
+.icons #play:hover {
+    filter: drop-shadow(2px 2px 5px rgb(5, 5, 5));
+}
+
+@media only screen and (max-width:768px) {
+    .con {
+        width: 37vw;
+    }
+    .icons {
+        width: 14vw;
+    }
+}
+
+@media only screen and (max-width:600px){
+    .con {
+        width: 50vw;
+    }
+    .icons {
+        width: 17vw;
+    }
+}
+@media only screen and (max-width:481px){
+  .con{
+    width:70vw
+  }
+  .icons {
+    width: 24vw;
+}
+}
+@media only screen and (max-width:320px) {
+    .con {
+        width: 85vw;
+    }
+    .icons {
+        width: 35vw;
+    }
+}

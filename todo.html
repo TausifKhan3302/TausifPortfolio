@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #101820;
+            height: 100vh;
+            width: 100vw;
+
+        }
+
+        h1 {
+            text-align: center;
+            color: #FEE715;
+        }
+
+        .btn {
+            color: #FEE715;
+            padding: 10px 15px;
+            border: 2px solid #FEE715;
+            border-radius: 10px;
+            background-color: #00060abc;
+            margin-left: 5px;
+            font-weight: 800;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            transition: 1s all;
+            color: black;
+            border: 2px solid black;
+            background-color: #FEE715;
+
+        }
+
+        .con {
+            width: 33vw;
+            display: flex;
+            justify-content: space-between;
+            margin: 0 auto;
+        }
+
+        #input {
+            padding: 10px 15px;
+            border: 2px solid #FEE715;
+            border-radius: 10px;
+            background-color: #00040733;
+            font-size: 1rem;
+            font-weight: 800;
+            cursor: pointer;
+            outline: none;
+            color: #FEE715;
+            
+        }
+
+        #input::placeholder {
+            color: #FEE715;
+        }
+
+        .p {
+            width: 15vw;
+            color: #FEE715;
+            position: relative;
+            margin-left: 36%;
+            cursor: pointer;
+        }
+
+        @media only screen and (max-width:600px) {
+            .con {
+                width: 61vw;
+            }
+            .p{
+    margin-left: 24%;
+        }
+        }
+        @media only screen and (max-width:481px) {
+            .con {
+                width: 76vw;
+            }
+.p{
+    margin-left: 18%;
+        }
+    }
+    @media only screen and (max-width:400px) {
+        .con {
+    width: 90vw;
+    }
+}
+    @media only screen and (max-width:320px) {
+            .con {
+    width: 85vw;
+}
+            #input {
+    padding: 2px 5px;
+    font-size: .7rem;
+        }
+        .btn{
+    font-size: .8rem;  
+        }
+        .p {
+    color: #FEE715;
+     margin-left: 14%;
+    }
+}
+    </style>
+</head>
+
+<body>
+    <h1>Simple ToDo APP</h1>
+    <div class="con">
+        <input type="text" id="input" name="input" placeholder=" Enter your word/number">
+        <label for="input" class="btn">Submit</label>
+    </div>
+    <div class="p"></div>
+
+    <script>
+
+
+        let input = document.getElementById("input");
+        let btn = document.querySelector(".btn")
+        let p = document.querySelector(".p")
+
+        btn.addEventListener("click", () => {
+            let pElm = document.createElement("p")
+            pElm.textContent = input.value
+            p.append(pElm)
+            console.log(pElm)
+            input.value = ""
+        })
+        p.addEventListener("click", (event) => {
+            console.log(event.target)
+            let remove = event.target
+            remove.remove()
+        })
+
+
+
+
+
+
+
+
+
+
+
+
+        //     let todo =()=>{
+        //         let pElm = document.createElement("p")
+        //         pElm.textContent = input.value
+        //         console.log(pElm)
+        //         p.append(pElm)
+        //         input.value = ""
+        //     }
+
+        //     btn.addEventListener("click",()=>{
+        //         todo()
+        //     })
+        //     p.addEventListener("click",(event)=>{
+        // console.log(event.target)
+        // let currenEnt = event.target
+        // currenEnt.remove()
+        //     })
+    </script>
+</body>
+
+</html>

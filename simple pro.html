@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: rgb(23, 23, 23);
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .rec{
+            width: 200px;
+            height: 200px;
+            background-color: rgb(156, 2, 2);
+        }
+        .rec1{
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            transition: 03s all;
+            background-color: rgb(156, 2, 2);
+        }
+        .rec2{
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            transition: 03s all;
+            background-color: rgb(156, 2, 2);
+           translate: 25rem 0 ;
+        }
+        .rec3{
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            transition: 03s all;
+            background-color: rgb(223, 227, 7);
+           translate: -15rem -5rem ;
+        }
+        .rec4{
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            transition: 03s all;
+            background-color: rgb(156, 2, 2);
+           translate: -25rem 0rem ;
+        }
+        .rec5{
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            transition: 03s all;
+            background-color: rgb(2, 156, 133);
+           translate: 0rem 0rem ;
+        }
+
+        #btn{
+            padding: 10px 15px;
+            border: 2px solid  rgb(156, 2, 2);
+            margin: 10px;
+            color:  rgb(156, 2, 2);
+            font-weight: 800;
+        }
+    </style>
+</head>
+<body>
+    <div class="rec"></div>
+    <button id="btn">Click me</button>
+
+    <script>
+        let btn = document.getElementById("btn")
+        let rec = document.querySelector(".rec")
+        
+        let callFunction = ()=>{
+            rec.style.backgroundColor = "#2F3C7E"
+        }
+        let callFunction1 = ()=>{
+            rec.style.backgroundColor = ""
+            rec.classList.add("rec1")
+        }
+        let callFunction2 = ()=>{
+            rec.classList.add("rec2")
+        }
+        let callFunction3 = ()=>{
+            rec.classList.add("rec3")
+        }
+        let callFunction4 = ()=>{
+            rec.classList.add("rec4")
+        }
+        let callFunction5 = ()=>{
+            rec.classList.add("rec5")
+        }
+        btn.addEventListener("click",callFunction)
+        rec.addEventListener("click",callFunction1)
+        rec.addEventListener("mouseenter",callFunction2)
+        rec.addEventListener("mouseleave",callFunction3)
+        rec.addEventListener("mousedown",callFunction4)
+        rec.addEventListener("dblclick",callFunction5)
+    </script>
+</body>
+</html>

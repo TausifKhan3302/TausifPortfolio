@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            background-color: rgb(0, 39, 40);
+            height: 10vh;
+            margin: -6px 0px;
+            width: 100vw;
+            text-align: center;
+            filter: drop-shadow(3px 3px 1px black);
+        }
+
+        .con {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            background-color: rgb(0, 39, 40);
+        }
+
+        .element {
+            width: 7vw;
+            height: 9vh;
+            border: 2px solid darkred;
+            margin: 2px 5px;
+            font-weight: 800;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .element:hover {
+            background-color: darkred;
+            border: 2px solid white;
+            color: white;
+            filter: drop-shadow(3px 3px 1px black);
+
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Periodic Table</h1>
+    <div class="con"></div>
+</body>
+
+<script>
+
+    let creatPeriodicElem = (Symbol, atomicNum, name) => {
+        let element = document.createElement("div")
+        element.classList.add("element")
+        element.innerHTML = Symbol
+
+        element.setAttribute("data-atomic-num", atomicNum)
+        element.setAttribute("data-atomic-name", name)
+
+        return element
+    }
+    let handleElemClick = (event) => {
+        let target = event.target
+        if (target.classList.contains("element")) {
+            let atomicNumber = target.getAttribute("data-atomic-num")
+            let elementName = target.getAttribute("data-atomic-name")
+
+            alert(`Atomic number : ${atomicNumber}\nElement name : ${elementName}`)
+        }
+    }
+
+    let initialiseperiodocFunction = () => {
+        let mainBody = document.querySelector(".con")
+
+        for (let i = 1; i <= 50; i++) {
+            let element = creatPeriodicElem(`Elem${i}`, i, `Element${i}`)
+            mainBody.append(element)
+
+        }
+        mainBody.addEventListener("click", handleElemClick)
+    }
+
+
+
+    initialiseperiodocFunction()
+
+</script>
+
+</html>

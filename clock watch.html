@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: darkred;
+        }
+        .con{
+            width: 20vw;
+            height: 20vh;
+            background: url(clock.jpg);
+            background-color: black;
+            background-size: 100% 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            border: 3px solid rgb(0, 255, 0);
+            border-radius: 10px;
+            filter: drop-shadow(5px 5px 2px black);
+          
+        }
+        .con1{
+               width: 20vw;
+            height: 20vh;
+            position: absolute;
+            background-color: rgba(0, 0, 0, 0.641);
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .clock{
+            color:rgb(0, 255, 0) ;
+            font-size: 1.6rem;
+        }
+        .right{
+            height: 5vh;
+            width:1vw;
+            background-color: black;
+            position: relative;
+            left: 5rem;
+            bottom:0rem;
+            filter: drop-shadow(5px 5px 2px black);
+        }
+        .bottom{
+            height: 5vh;
+            width:18vw;
+            background-color: black;
+            position: relative;
+            left: 3rem;
+            bottom: 0rem;
+            border: 2px solid rgb(0, 255, 0);
+            filter: drop-shadow(5px 5px 2px black);
+            color:rgb(0, 255, 0) ;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        @media only screen and (max-width:768px) {
+            .con1 {
+    width: 34vw;
+            }
+            .con {
+    width: 34vw;
+            }
+            .bottom {
+    width: 30vw;
+            }
+        }
+
+        @media only screen and (max-width:481px) {
+            .con {
+    width: 44vw;
+}
+.con1 {
+    width: 44vw;
+}
+.right {
+    width: 1.5vw;
+}
+.bottom {
+    width: 35vw;
+}
+        }
+
+        
+        @media only screen and (max-width:400px) {
+            .con {
+    width: 50vw;
+}
+.con1 {
+    width: 50vw;
+}
+.right {
+    width: 1.5vw;
+}
+.bottom {
+    width: 39vw;
+}
+      
+        }
+
+        @media only screen and (max-width:320px) {
+            .con {
+    width: 60vw;
+}
+.con1 {
+    width: 60vw;
+}
+.right {
+    width: 1.8vw;
+    bottom: -0.1rem;
+}
+.bottom {
+    width: 49vw;
+}
+      
+        }
+    </style>
+</head>
+<body>
+    <div class="con"><div class="con1"><div class="clock"></div></div></div>
+    <div class="right"></div>
+    <div class="bottom">Digital Clock</div>
+    
+
+    <script>
+let clock = document.querySelector(".clock")
+    setInterval(() => {
+        let date = new Date().toLocaleTimeString()
+        clock.innerHTML = date
+
+    }, 1000);    
+    </script>
+</body>
+</html>

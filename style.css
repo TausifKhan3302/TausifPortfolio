@@ -1,0 +1,2098 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+
+}
+
+:root {
+    --bg-color: #990011;
+    --back-color: #c6031a;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: rgb(45, 44, 44);
+    /* border-radius: 10px; */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--bg-color);
+    border-radius: 10px;
+    filter: drop-shadow(4px 2px 1px black);
+}
+
+nav {
+    height: 10vh;
+    width: 100vw;
+    background-color: var(--bg-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    z-index: 1000;
+    filter: drop-shadow(0px 5px 5px black);
+}
+
+.nav {
+    display: none;
+}
+
+.hamburger {
+    display: none;
+}
+
+nav .logo {
+    font-size: 2rem;
+    font-weight: 800;
+    position: relative;
+    left: 1rem;
+    color: white;
+    filter: drop-shadow(1px 1px 0px black);
+}
+
+nav .logo span {
+    color: rgb(1, 1, 17);
+}
+
+nav .mright {
+    position: relative;
+    right: 2rem;
+}
+
+nav .mright ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 33vw;
+    position: relative;
+
+}
+
+nav .mright ul li {
+    list-style: none;
+    position: relative;
+    right: 2rem;
+}
+
+nav .mright ul li a {
+    text-decoration: none;
+    color: black;
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 9px 23px;
+    position: relative;
+}
+
+nav .mright ul li a::before {
+    content: "";
+    position: absolute;
+    transition: all 0.4s;
+    transform-origin: right bottom;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    border-top: 3px solid white;
+    border-left: 3px solid white;
+}
+
+nav .mright ul li a::before {
+    content: "";
+    position: absolute;
+    transition: all 0.4s;
+    transform-origin: right bottom;
+    height: 100%;
+    width: 100%;
+    right: 0;
+    bottom: 0;
+    border-right: 3px solid black;
+    border-bottom: 3px solid black;
+}
+
+nav .mright ul li a:hover::before,
+nav .mright ul li a:hover::after {
+    width: 10%;
+    height: 11%;
+    transform: rotate(360deg);
+}
+
+/* header */
+
+header {
+    height: 100vh;
+    width: 100vw;
+    background-color: rgb(1, 1, 17);
+    position: relative;
+
+}
+
+section {
+    width: 30vw;
+    height: 50vh;
+    position: relative;
+    top: 10rem;
+    left: 5rem;
+}
+
+section .sl-c h2 {
+    color: white;
+    position: relative;
+    top: 3.3rem;
+    font-size: 3rem;
+    right: .1rem;
+}
+
+section .sl-c .shn {
+    color: var(--bg-color);
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+section .sl-c .shn .t {
+    color: white;
+}
+
+section .sl-c .element #element {
+    color: white;
+    font-weight: 600;
+}
+
+.element {
+    width: 60vw;
+}
+
+.sl-button {
+    padding: .2rem .5rem;
+    font-size: 1rem;
+    font-weight: 800;
+    border-top: 2px solid white;
+    border-left: 2px solid white;
+    border-right: 2px solid var(--bg-color);
+    border-bottom: 2px solid var(--bg-color);
+    background-color: rgb(1, 1, 17);
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.sl {
+    display: flex;
+}
+
+.myphoto {
+    width: 20vw;
+    border-radius: 50%;
+    position: relative;
+    z-index: 2;
+    border: 3px solid var(--bg-color);
+    filter: drop-shadow(1px 1px 1px white);
+}
+
+/* about */
+
+.about {
+    height: 100vh;
+    width: 100vw;
+    background-color: var(--bg-color);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: none;
+
+}
+
+
+.about h1 {
+    position: relative;
+    top: 11rem;
+    left: 2rem;
+    color: rgb(1, 1, 17);
+    font-weight: 800;
+
+}
+
+.aboutct {
+    width: 100vw;
+    height: 80vh;
+    position: relative;
+    top: 9rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.aboutct .abtleft {
+    width: 57vw;
+    height: 40vh;
+    background-color: rgb(1, 1, 17);
+    color: white;
+    padding: 2rem;
+    text-align: center;
+    position: relative;
+    left: 1rem;
+    filter: drop-shadow(5px 5px 5px black);
+    text-align: left;
+}
+
+.skill {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    top: 0;
+}
+
+.skill h1 {
+    text-align: center;
+    position: relative;
+    top: 5rem;
+}
+
+.skill h3 {
+    margin: 5px;
+
+}
+
+.skill-con {
+    width: 46vw;
+    height: 87vh;
+    position: relative;
+    right: -.8rem;
+    text-align: left;
+    border-radius: 10px;
+    background-color: #f2121243;
+    margin: 0px auto;
+    top: 5rem;
+    padding-top: .2rem;
+    padding-bottom: .2rem;
+    z-index: 2;
+}
+
+.skill-con li {
+    list-style: none;
+    margin: 10px 0;
+    position: relative;
+    left: 2.5rem;
+    filter: drop-shadow(2px 2px 1px black);
+}
+
+.skill-con .bar {
+    display: block;
+    height: 24px;
+    width: 85%;
+    border: 2px solid white;
+    border-radius: 10px;
+    filter: drop-shadow(4px 4px 2px black);
+
+}
+
+.bar:hover {
+    filter: drop-shadow(6px 6px 2px black);
+}
+
+.bar span {
+    height: 20px;
+    float: left;
+    background-color: var(--bg-color);
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.html {
+    width: 90%;
+    animation: html 3s;
+}
+
+.css {
+    width: 90%;
+    animation: css 3s;
+}
+
+.Javascript {
+    width: 85%;
+    animation: javascript 3s;
+}
+
+.php {
+    width: 85%;
+    animation: php 3s;
+}
+
+.mysql {
+    width: 92%;
+    animation: mysql 3s;
+}
+
+.jQuery {
+    width: 95%;
+    animation: jquery 3s;
+}
+
+.wordpress {
+    width: 90%;
+    animation: wordpress 3s;
+}
+
+.boostrape {
+    width: 90%;
+    animation: boostrape 3s;
+}
+
+@keyframes html {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 90%;
+    }
+}
+
+@keyframes css {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 90%;
+    }
+}
+
+@keyframes javascript {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 85%;
+    }
+}
+
+@keyframes php {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 90%;
+    }
+}
+
+@keyframes mysql {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 92%;
+    }
+}
+
+@keyframes jquery {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 95%;
+    }
+}
+
+@keyframes wordpress {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 80%;
+    }
+}
+
+@keyframes boostrape {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 90%;
+    }
+}
+
+/* project  */
+.project {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    background-color: #2A3132;
+    top: 0;
+    left: 0;
+    display: none;
+    z-index: 4;
+}
+
+.project h1 {
+    position: relative;
+    top: 5rem;
+    text-align: center;
+    color: white;
+    filter: drop-shadow(3px 3px 1px black);
+}
+
+.project .pro-con {
+    width: 100vw;
+    height: 80vh;
+    position: relative;
+    top: 7rem;
+}
+
+.pro-con-one {
+    width: 100vw;
+    height: 19vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+.pro-con-one .one {
+    width: 18vw;
+    height: 18vh;
+    background-color: white;
+    filter: drop-shadow(3px 3px 1px black);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    font-weight: 800;
+}
+
+.pro-a {
+    text-decoration: none;
+    width: 8vw;
+    font-size: .8rem;
+    height: 5vh;
+    background-color: #2A3132;
+    color: white;
+    filter: drop-shadow(3px 3px 1px black);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pro-con-two {
+    width: 100vw;
+    height: 19vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: .6rem 0;
+}
+
+.pro-con-two .one {
+    width: 18vw;
+    height: 18vh;
+    background-color: white;
+    filter: drop-shadow(3px 3px 1px black);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    font-weight: 800;
+}
+
+.pro-con-three {
+    width: 100vw;
+    height: 19vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: .6rem 0;
+}
+
+.pro-con-three .one {
+    width: 18vw;
+    height: 18vh;
+    background-color: white;
+    filter: drop-shadow(3px 3px 1px black);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    font-weight: 800;
+
+}
+
+.project .pro-con .one {
+    border-radius: 10px;
+    border: 2px solid rgb(58, 56, 56);
+}
+
+/* contect */
+.contect {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(26, 48, 40);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 4;
+}
+
+.contect-c {
+    width: 50vw;
+    height: 70vh;
+    background-color: black;
+    border-radius: 20px;
+    position: relative;
+    top: 8.7rem;
+    margin: 0 auto;
+}
+
+.contect-c .con-c1 {
+    background-image: url(contact.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 25vw;
+    height: 70vh;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+
+}
+
+.contect-c form {
+    width: 25vw;
+    height: 70vh;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    position: absolute;
+    bottom: 2rem;
+    left: 22rem;
+    display: flex;
+    flex-direction: column;
+    z-index: 10;
+
+}
+
+.contect-c form input,
+.contect-c form .ct1 {
+    width: 20vw;
+    height: 4vh;
+    margin: 0 auto;
+    margin-top: .8rem;
+    border-radius: .5rem;
+    outline: none;
+    padding: 0.8rem 1rem;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 700;
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    border-top: 2px solid rgb(26, 48, 40);
+    border-left: 2px solid rgb(26, 48, 40);
+    border-right: 2px solid var(--bg-color);
+    border-bottom: 2px solid var(--bg-color);
+}
+
+.contect-c form input:first-child {
+    margin-top: 3.3rem;
+}
+
+.contect-c form .ct1:nth-child(3) {
+    padding: 4px 0px;
+    height: 7vh;
+}
+
+.contect-c form input:last-child {
+    width: 10vw;
+    padding: 2px 0px;
+    height: 6vh;
+    font-size: 1.4rem;
+    font-weight: 700;
+    cursor: pointer;
+    background-color: black;
+    border-top: 2px solid rgb(26, 48, 40);
+    border-left: 2px solid rgb(26, 48, 40);
+    border-right: 2px solid var(--bg-color);
+    border-bottom: 2px solid var(--bg-color);
+    color: white;
+}
+
+.contect-c form textarea {
+    padding: 0.8rem 1rem;
+    margin: 0 auto;
+    margin-top: .8rem;
+    width: 20vw;
+    border-radius: .5rem;
+    text-align: center;
+    font-weight: 700;
+    font-size: 1rem;
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    border-top: 2px solid rgb(26, 48, 40);
+    border-left: 2px solid rgb(26, 48, 40);
+    border-right: 2px solid var(--bg-color);
+    border-bottom: 2px solid var(--bg-color);
+}
+
+
+/* footer */
+.footer {
+    height: 10vh;
+    width: 100vw;
+    background-color: var(--back-color);
+    filter: drop-shadow(0px 1px 1px black);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.mobile {
+    position: relative;
+    left: -3rem;
+}
+
+.mobile i {
+    margin-right: 1rem;
+}
+
+.email i {
+    margin-right: 1rem;
+}
+
+.f-logo {
+    font-size: 2rem;
+    font-weight: 800;
+    position: relative;
+    color: white;
+    filter: drop-shadow(1px 1px 0px black);
+}
+
+.f-logo span {
+    color: rgb(1, 1, 17);
+}
+
+.footer-con {
+    width: 100vw;
+    height: 40vh;
+    background-color: var(--bg-color);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+
+.fo-con-left {
+    width: 32vw;
+    height: 30vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(1, 1, 17);
+    filter: drop-shadow(5px 10px 10px black);
+    color: white;
+    padding: 0rem 1rem;
+    text-align: center;
+}
+
+.fo-con-left h1 {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 2rem;
+    filter: drop-shadow(5px 10px 10px black);
+}
+
+.fo-con-left p {
+    font-size: 1rem;
+}
+
+.footer-social {
+    width: 32vw;
+    height: 30vh;
+    background-color: rgb(1, 1, 17);
+    filter: drop-shadow(5px 10px 10px black);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.footer-social h2 {
+    font-size: 2rem;
+    position: relative;
+    bottom: .5rem;
+    color: white;
+    filter: drop-shadow(5px 10px 10px black);
+}
+
+.fs-con a {
+    padding: 1.8rem 2rem;
+    margin: 1rem;
+    border-radius: 50%;
+    filter: drop-shadow(2px 4px 2px rgb(34, 34, 33));
+}
+
+.fs-con a:nth-child(2) {
+    padding: 1.8rem 2.1rem;
+}
+
+.fa:hover {
+    opacity: 0.7;
+    filter: drop-shadow(2px 2px 0px white);
+}
+
+
+.fa-instagram {
+    background: #125688;
+    color: white;
+}
+
+.fa-youtube {
+    background: #bb0000;
+    color: white;
+}
+
+
+
+/* media query */
+@media only screen and (max-width:1316px) {
+
+    nav .mright ul li a {
+        padding: 9px 20px 6px 24px;
+    }
+
+    /* contect  */
+    .contect-c {
+        top: 6.7rem;
+    }
+
+    .contect-c form {
+        left: 20rem;
+        bottom: 1.5rem;
+    }
+
+    .contect-c form input:last-child {
+        padding: 3px 0px;
+        height: 11vh;
+    }
+
+    .nav ul {
+        display: none;
+    }
+
+    /* skill  */
+    .skill-con {
+        height: 87vh;
+        top: 4rem;
+    }
+
+    .skill h1 {
+        top: 3.5rem;
+        z-index: 100;
+    }
+
+    .skill h3 {
+        font-size: 1rem;
+    }
+
+    .bar span {
+        height: 2.2vh;
+    }
+
+    .skill-con .bar {
+        height: 3vh;
+    }
+
+    .aboutct .abtleft {
+        padding-top: 2.5rem;
+        position: relative;
+        bottom: 2rem;
+        height: 50vh;
+    }
+
+    .fo-con-left h1 {
+        font-size: 2rem;
+        position: relative;
+        top: 1rem;
+    }
+
+    .fo-con-left p {
+        font-size: 1rem;
+        position: relative;
+        bottom: 1.2rem;
+    }
+}
+
+@media only screen and (max-width:1166px) {
+    nav .mright ul {
+        width: 30vw;
+        position: relative;
+        right: .5rem;
+    }
+
+    nav .mright ul li a {
+        padding: 9px 18px 6px 22px;
+    }
+
+    .contect-c form {
+        left: 17rem;
+        bottom: 1.5rem;
+    }
+
+    .nav ul {
+        display: none;
+    }
+
+    .aboutct .abtleft {
+        width: 70vw;
+        height: 47vh;
+        padding: 0rem 2rem;
+        padding-top: 2rem;
+        left: 1rem;
+        top: -2rem;
+    }
+
+    /* skill  */
+    .skill-con {
+        height: 79vh;
+        top: 4rem;
+    }
+
+    .skill h1 {
+        top: 3.4rem;
+        z-index: 100;
+    }
+
+    .skill h3 {
+        font-size: 1rem;
+    }
+
+    .bar span {
+        height: 2.2vh;
+    }
+
+    .skill-con .bar {
+        height: 3vh;
+    }
+}
+
+/* project  */
+nav .mright ul {
+    width: 36vw;
+    position: relative;
+    right: .5rem;
+}
+
+.one {
+    font-size: .8rem;
+}
+
+.pro-a {
+    font-size: .6rem;
+}
+
+@media only screen and (max-width:1024px) {
+
+    nav .mright ul {
+        width: 26vw;
+        left: 1rem;
+    }
+
+    nav .mright ul li a {
+        padding: 9px 11px 6px 15px;
+        font-size: .9rem;
+    }
+
+    /* content  */
+    .contect-c form {
+        left: 16rem;
+    }
+
+    /* about  */
+    .nav {
+        display: none;
+    }
+
+    .nav ul {
+        display: none;
+    }
+
+    .aboutct .abtleft {
+        left: 2rem;
+        height: 48vh;
+        top: -1rem;
+        padding-top: 1.3rem;
+        word-spacing: 0px;
+    }
+
+    .about h1 {
+        top: 11rem;
+        left: 2rem;
+    }
+
+    /* skill  */
+    .skill-con {
+        width: 65vw;
+        height: 87vh;
+        top: 3.5rem;
+        position: relative;
+    }
+
+    .skill h1 {
+        top: 3.3rem;
+        z-index: 100;
+    }
+
+    .skill h3 {
+        font-size: 1rem;
+    }
+
+    .bar span {
+        height: 2.2vh;
+    }
+
+    .skill-con .bar {
+        height: 3vh;
+    }
+
+    /* project  */
+    nav .mright ul {
+        width: 33vw;
+        position: relative;
+        right: .5rem;
+    }
+
+    .one {
+        font-size: .8rem;
+    }
+
+    .pro-a {
+        font-size: .6rem;
+    }
+
+
+
+    .fo-con-left {
+        width: 40vw;
+        position: relative;
+        right: 0rem;
+    }
+
+    .footer-social {
+        width: 40vw;
+        position: relative;
+        right: 1rem;
+    }
+
+    .fs-con a {
+        padding: 1.1rem 1.2rem;
+    }
+
+    .fs-con a:nth-child(2) {
+        padding: 1.1rem 1.4rem;
+    }
+
+    .fo-con-left h1 {
+        font-size: 2rem;
+        position: relative;
+        top: 1rem;
+    }
+
+    .fo-con-left p {
+        font-size: 1rem;
+        position: relative;
+        bottom: 1.2rem;
+    }
+}
+
+
+@media only screen and (max-width:876px) {
+    nav .mright ul {
+        width: 37vw;
+        left: 2.5rem;
+    }
+
+    .aboutct .abtleft {
+        left: 2rem;
+        height: 53vh;
+        top: -1rem;
+        padding-top: 1.3rem;
+        word-spacing: 0px;
+    }
+
+    /* project  */
+    nav .mright ul {
+        width: 39vw;
+        position: relative;
+        right: .5rem;
+    }
+
+    .one {
+        font-size: .7rem;
+    }
+
+    .pro-a {
+        font-size: .5rem;
+    }
+
+}
+
+@media only screen and (max-width:768px) {
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background-color: rgb(45, 44, 44);
+        /* border-radius: 10px; */
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: var(--bg-color);
+        border-radius: 10px;
+        filter: drop-shadow(4px 2px 1px black);
+    }
+
+    nav .mright {
+        display: none;
+    }
+
+    .hamburger {
+        width: 5vw;
+        height: 1px;
+        position: relative;
+        display: flex;
+        top: 0.8rem;
+        right: 1rem;
+        z-index: 10000;
+        position: fixed;
+    }
+
+    /* myphoto  */
+    .myphoto {
+        width: 30vw;
+        border-radius: 50%;
+        position: relative;
+        right: 3rem;
+    }
+
+
+    /* skill  */
+    .skill-con {
+        width: 85vw;
+        right: 0.2rem;
+        top: 4rem;
+        height: 90vh;
+    }
+
+    .bar span {
+        height: 2.5vh;
+    }
+
+    .skill-con .bar {
+        height: 3.3vh;
+    }
+
+    .skill h1 {
+        top: 3.5rem;
+        z-index: 1;
+    }
+
+    .skill h3 {
+        font-size: 1rem;
+    }
+
+    /* project  */
+    .one {
+        font-size: .6rem;
+    }
+
+    .pro-a {
+        font-size: .4rem;
+    }
+
+
+    /* contect  */
+    .contect-c .con-c1 {
+        width: 30vw;
+    }
+
+    .contect-c {
+        width: 75vw;
+        position: relative;
+        right: 0rem;
+    }
+
+    .contect-c form {
+        left: 19.5rem;
+        bottom: 1.5rem;
+    }
+
+    .contect-c form input,
+    .contect-c form .ct1 {
+        width: 30vw
+    }
+
+    .contect-c form textarea {
+        width: 30vw;
+    }
+
+    .contect-c form input:last-child {
+        width: 14vw;
+        height: 7vh;
+        font-size: 1rem;
+        position: relative;
+        left: 1.4rem;
+    }
+
+    .fo-con-left {
+        width: 40vw;
+        right: 0;
+    }
+
+    .footer-social {
+        width: 40vw;
+    }
+
+    nav .mright ul {
+        width: 33vw;
+    }
+
+    nav .mright ul li a {
+        font-size: .8rem;
+    }
+
+    .fs-con a {
+        padding: 1rem 1.2rem;
+        margin: .3rem;
+    }
+
+    .fs-con a:nth-child(2) {
+        padding: 1rem 1.4rem
+    }
+
+    .fo-con-left h1 {
+        font-size: 1.5rem;
+        top: -1rem;
+    }
+
+    .mobile {
+        left: -38.9px;
+    }
+
+    .fo-con-left {
+        z-index: 10;
+    }
+
+    .fo-con-left p {
+        font-size: .8rem;
+        position: relative;
+
+    }
+
+    .footer-social h2 {
+        margin: 1rem;
+    }
+
+    .nav {
+        position: absolute;
+        display: none;
+        width: 60vw;
+        height: 100vh;
+        background-color: var(--bg-color);
+        z-index: 100;
+        position: fixed;
+        top: 3rem;
+        filter: drop-shadow(5px 10px 10px black);
+        color: white;
+    }
+
+    .nav ul {
+        position: relative;
+        top: 6rem;
+        width: 60vw;
+        height: 50vh;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: column;
+        color: white;
+    }
+
+    .nav ul li {
+        list-style: none;
+        width: 60.2vw;
+        height: 10vh;
+        text-align: center;
+        padding: 14px 0;
+        transition: all 0.5s;
+    }
+
+    .nav ul li:hover {
+        background-color: rgb(1, 1, 17);
+        color: white;
+    }
+
+    .nav ul li a {
+        text-decoration: none;
+        font-size: 1.3rem;
+        font-weight: 800;
+        color: black;
+        padding: 14px 0;
+    }
+
+    .nav ul li a:hover {
+        color: white;
+        padding: 14px 0;
+    }
+
+    /* about  */
+    .about {
+        width: 96vw;
+        left: 1rem;
+        z-index: 5;
+    }
+
+    .about h1 {
+        top: 7rem;
+    }
+
+    .aboutct .abtleft {
+        left: 2rem;
+        height: 65vh;
+        top: -3.5rem;
+        text-align: center;
+        padding-top: 1.8rem;
+    }
+
+}
+
+
+@media only screen and (max-width:600px) {
+    .hamburger {
+        right: 1rem;
+    }
+
+    .f-logo {
+        right: 1rem;
+    }
+
+    .aboutct .abtleft {
+        height: 34vh;
+        top: -5rem;
+        width: 85vw;
+        padding-top: 1rem;
+        font-size: .7rem;
+    }
+
+
+
+    .skill h3 {
+        font-size: 1rem;
+    }
+
+    .skill-con {
+        top: 4rem;
+        height: 88vh;
+    }
+
+    .skill h1 {
+        top: 3.5rem;
+    }
+
+    /* project  */
+    .one {
+        font-size: .5rem;
+    }
+
+    .pro-a {
+        font-size: .3rem;
+    }
+
+    .contect-c form {
+        left: 15.5rem;
+    }
+
+    .fo-con-left h1 {
+        font-size: 1.5rem;
+        top: -0.3rem;
+    }
+
+    .fo-con-left p {
+        font-size: 11px;
+        position: relative;
+    }
+
+    .mobile {
+        left: -19.9px;
+    }
+
+    .email i {
+        position: relative;
+        left: 14px;
+    }
+
+    .contect-c {
+        width: 75vw;
+        right: 0rem;
+        top: 6rem;
+    }
+
+    .fo-con-left {
+        right: 0rem;
+    }
+
+    .footer-social h2 {
+        margin: 1rem;
+        font-size: 22px;
+    }
+}
+
+@media only screen and (max-width:481px) {
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background-color: rgb(45, 44, 44);
+        /* border-radius: 10px; */
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: var(--bg-color);
+        border-radius: 10px;
+        filter: drop-shadow(4px 2px 1px black);
+    }
+
+    .mright {
+        display: none;
+    }
+
+    .hamburger {
+        width: 7vw;
+        height: 10vh;
+        position: relative;
+        display: flex;
+        top: 0.8rem;
+        z-index: 10000;
+        position: fixed;
+    }
+
+    nav {
+        position: fixed;
+    }
+
+    .nav {
+        position: absolute;
+        display: none;
+        width: 60vw;
+        height: 100vh;
+        position: fixed;
+        z-index: 100;
+        top: 3rem;
+        filter: drop-shadow(5px 10px 10px black);
+        background-color: var(--bg-color);
+    }
+
+    .nav ul {
+        position: relative;
+        top: 6rem;
+        width: 60vw;
+        height: 50vh;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: column;
+    }
+
+    .nav ul li {
+        list-style: none;
+        width: 60vw;
+        height: 10vh;
+        text-align: center;
+        padding: 14px 0;
+        transition: all 0.4s;
+
+    }
+
+    .nav ul li:hover {
+        background-color: rgb(1, 1, 17);
+        color: white;
+    }
+
+    .nav ul li a {
+        text-decoration: none;
+        font-size: 1.3rem;
+        font-weight: 800;
+        color: black;
+    }
+
+    .nav ul li a:hover {
+        color: white;
+    }
+
+    .myphoto {
+        width: 61vw;
+        border-radius: 50%;
+        position: relative;
+        right: 10rem;
+    }
+
+    .sr {
+        position: relative;
+        right: 4rem;
+    }
+
+
+    /* project  */
+    .project {
+        z-index: 99;
+        height: 110vh;
+
+    }
+
+    .one {
+        margin: 3px;
+        font-size: .7rem;
+    }
+
+    .pro-a {
+        width: 15vw;
+        font-size: .5rem;
+    }
+
+    .pro-con-one {
+        flex-wrap: wrap;
+    }
+
+    .pro-con-one .one {
+        width: 43vw;
+    }
+
+    .pro-con-two {
+        flex-wrap: wrap;
+        position: relative;
+        top: 6rem;
+    }
+
+    .pro-con-two .one {
+        width: 43vw;
+    }
+
+    .pro-con-three {
+        flex-wrap: wrap;
+        position: relative;
+        top: 12rem;
+    }
+
+    .pro-con-three .one {
+        width: 43vw;
+
+    }
+
+    .skill-con {
+        z-index: 4;
+    }
+
+    /* contect  */
+    .contect-c form {
+        left: 11rem;
+    }
+
+    .contect-c {
+        right: 1rem;
+    }
+
+    .contect-c form input,
+    .contect-c form .ct1 {
+        width: 42vw;
+    }
+
+    .contect-c form textarea {
+        width: 42vw;
+    }
+
+    .contect-c form input:last-child {
+        width: 19vw;
+        height: 8vh;
+        left: 2.6rem;
+    }
+
+    /* about  */
+    .about {
+        width: 91vw;
+    }
+
+    .aboutct .abtleft {
+        height: 43vh;
+        top: -1rem;
+        width: 81vw;
+        padding-top: 1rem;
+        left: 1.6rem;
+    }
+
+
+    .f-logo {
+        left: 0rem;
+    }
+
+    .sl-c {
+        width: 50vw;
+        position: relative;
+        left: 2.8rem;
+        z-index: 3;
+    }
+
+    .sl-bttnc {
+        position: relative;
+        left: 2.8rem;
+    }
+
+    .myphoto {
+        width: 48vw;
+        border-radius: 50%;
+        position: relative;
+        right: 14rem;
+        bottom: .3rem;
+    }
+
+    .sl-bttnc input {
+        font-size: .7rem;
+        padding: 6px 8px;
+        position: relative;
+        right: 1rem;
+    }
+
+    section .sl-c h2 {
+        font-size: 2.3rem;
+        top: 1.9rem;
+        top: 3rem;
+    }
+
+    section .sl-c .shn {
+        font-size: 1.4rem;
+    }
+
+    .footer-con {
+        flex-direction: column;
+        height: 41vh;
+    }
+
+    .fo-con-left {
+        width: 80vw;
+        height: 20vh;
+        background-color: var(--bg-color);
+        filter: none;
+        top: 0.1rem;
+        position: relative;
+    }
+
+    .footer-social {
+        width: 80vw;
+        height: 20vh;
+        background-color: var(--bg-color);
+        filter: none;
+        position: relative;
+        bottom: 1rem;
+        left: 0rem;
+    }
+
+    .fo-con-left h1 {
+        font-size: 2rem;
+        margin: 0.5rem;
+        filter: drop-shadow(2px 3px 2px black);
+        position: relative;
+        top: 0rem;
+        left: 1rem;
+    }
+
+    .fo-con-left p {
+        font-size: .7rem;
+        left: 1rem;
+        position: relative;
+        top: -4px;
+    }
+
+
+    .footer-social h2 {
+        display: none;
+    }
+
+
+
+    .contect-c form {
+        left: 11.5rem;
+    }
+
+    .contect-c {
+        width: 85vw;
+        right: 0rem;
+    }
+
+
+}
+
+
+@media only screen and (max-width:425px) {
+    .myphoto {
+        width: 61vw;
+        border-radius: 50%;
+        position: relative;
+        right: 4.8rem;
+    }
+
+    .sr {
+        position: relative;
+        right: 8.7rem;
+    }
+}
+
+@media only screen and (max-width:414px) {
+    .aboutct .abtleft {
+        height: 35vh;
+        top: .8rem;
+        width: 83vw;
+        left: 1rem;
+        font-size: .6rem;
+        padding: 1rem 1rem;
+    }
+
+    .contect-c {
+        right: 0rem
+    }
+
+    .contect-c form {
+        left: 10rem;
+    }
+
+    /* project  */
+    .pro-a {
+        width: 17vw;
+    }
+
+    .project {
+        height: 110vh;
+    }
+}
+
+@media only screen and (max-width:406px) {
+    .aboutct .abtleft {
+        height: 38vh;
+        top: 0rem;
+        width: 76vw;
+        left: 1.9rem;
+    }
+}
+
+@media only screen and (max-width:400px) {
+
+    .aboutct .abtleft {
+        height: 39vh;
+        top: -4rem;
+        width: 76vw;
+        left: 1.9rem;
+    }
+
+
+    .hamburger {
+        top: 0.7rem;
+    }
+
+
+
+    /* skill  */
+    .skill-con {
+        width: 65vw;
+        height: 75vh;
+        z-index: 4;
+    }
+
+    .skill h3 {
+        position: relative;
+        right: 0rem;
+        font-size: .8rem;
+    }
+
+    .bar span {
+        height: 2.2vh;
+
+    }
+
+    .skill-con .bar {
+        height: 3vh;
+        width: 60vw;
+    }
+
+    .skill-con li {
+        left: 0.5rem;
+    }
+
+    .contect-c {
+        width: 76vw;
+        left: 0rem;
+    }
+
+    .contect-c form {
+        left: 7.5rem;
+    }
+
+    .sl-c {
+        left: 1.8rem;
+        z-index: 3;
+    }
+
+    /* myphoto  */
+    .myphoto {
+        right: 3.5rem;
+    }
+
+    .project {
+        z-index: 99;
+        height: 110vh;
+    }
+
+
+
+}
+
+
+
+
+@media only screen and (max-width:390px) {
+    .aboutct .abtleft {
+        width: 80vw;
+        position: relative;
+        left: 1.3rem;
+    }
+}
+
+@media only screen and (max-width:385px) {
+    .aboutct .abtleft {
+        width: 57vh;
+
+    }
+}
+
+
+
+@media only screen and (max-width:378px) {
+    .aboutct .abtleft {
+        width: 56vh;
+
+    }
+}
+
+@media only screen and (max-width:375px) {
+
+    .aboutct .abtleft {
+        width: 56vh;
+    }
+
+    .myphoto {
+        width: 61vw;
+        border-radius: 50%;
+        position: relative;
+        right: 5rem;
+    }
+
+    .sr {
+        position: relative;
+        right: 7.3rem;
+    }
+}
+
+@media only screen and (max-width:374px) {
+    .aboutct .abtleft {
+        width: 58vh;
+    }
+}
+
+@media only screen and (max-width:368px) {
+    .fo-con-left p {
+        font-size: .8rem;
+        position: relative;
+        top: 0.4rem;
+        left: 1.4rem;
+    }
+
+    .aboutct .abtleft {
+        width: 58vh;
+        left: .8rem;
+    }
+
+    /* project  */
+    .pro-a {
+        width: 19vw;
+        font-size: .4rem;
+    }
+}
+
+@media only screen and (max-width:362px) {
+    .fo-con-left p {
+        font-size: .8rem;
+        position: relative;
+        top: 0.4rem;
+        left: 1.4rem;
+    }
+}
+
+@media only screen and (max-width:356px) {
+    .aboutct .abtleft {
+        width: 55vh;
+
+    }
+}
+
+@media only screen and (max-width:335px) {
+    .aboutct .abtleft {
+        width: 52.4vh;
+        height: 41vh;
+    }
+}
+
+@media only screen and (max-width:334px) {
+    .aboutct .abtleft {
+        width: 51vh;
+        position: relative;
+        top: 0rem;
+        height: 42vh;
+    }
+}
+
+@media only screen and (max-width:332px) {
+    .aboutct .abtleft {
+        width: 82vw;
+
+    }
+}
+
+
+
+@media only screen and (max-width:320px) {
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background-color: rgb(45, 44, 44);
+        /* border-radius: 10px; */
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: var(--bg-color);
+        border-radius: 10px;
+        filter: drop-shadow(4px 2px 1px black);
+    }
+
+    .hamburger {
+        width: 7vw;
+    }
+
+    .f-logo {
+        left: 0rem;
+    }
+
+    section {
+        left: 3rem;
+    }
+
+    .sl-c {
+        width: 60vw;
+    }
+
+    .about h1 {
+        width: 20vw;
+    }
+
+    .myphoto {
+        right: 3.7rem;
+    }
+
+
+    .aboutct {
+        width: 90vw;
+    }
+
+    .nav {
+        top: 3rem;
+    }
+
+    .sr {
+        position: relative;
+        right: 7.7rem;
+    }
+
+    /* skill  */
+    .skill h3 {
+        position: relative;
+        right: 0rem;
+        font-size: .8rem;
+    }
+
+    .skill-con .bar {
+        position: relative;
+        right: -1rem;
+        width: 65vw;
+    }
+
+    .skill-con {
+        width: 79vw;
+        height: 76vh;   
+    }
+
+    .fo-con-left {
+        position: relative;
+        left: 0rem;
+    }
+
+    .fo-con-left h1 {
+        left: .3rem;
+        top: 0rem;
+
+    }
+
+    .footer-social {
+        left: .0rem;
+        top: 0.1rem;
+    }
+
+    .nav {
+        height: 142vh;
+        z-index: 100;
+        position: fixed;
+
+    }
+
+    nav .logo {
+        font-size: 1.8rem;
+        left: 0.8rem;
+    }
+
+    /* contect  */
+    .contect-c .con-c1 {
+        width: 72vw;
+        border-radius: 20px;
+        width: 53vw;
+        position: relative;
+        left: 2.5rem;
+    }
+
+    .contect-c form {
+        left: 1.4rem;
+        opacity: .7;
+    }
+
+    .contect-c form input,
+    .contect-c form .ct1 {
+        width: 62vw;
+    }
+
+    .contect-c {
+        width: 76vw;
+        position: relative;
+        left: 0rem;
+    }
+
+    .contect-c form textarea {
+        width: 62vw;
+    }
+
+    .contect-c form input:last-child {
+        width: 32vw;
+        left: 3.1rem;
+    }
+
+    /* project  */
+    .project {
+        z-index: 99;
+        height: 280vh
+    }
+
+    .one {
+        margin: 3px;
+        font-size: .7rem;
+    }
+
+    .pro-a {
+        width: 25vw;
+        font-size: .5rem;
+    }
+
+    .pro-con-one {
+        flex-wrap: wrap;
+    }
+
+    .pro-con-one .one {
+        width: 85vw;
+    }
+
+    .pro-con-two {
+        flex-wrap: wrap;
+        position: relative;
+        top: 18.5rem;
+    }
+
+    .pro-con-two .one {
+        width: 85vw;
+    }
+
+    .pro-con-three {
+        flex-wrap: wrap;
+        position: relative;
+        top: 37rem;
+    }
+
+    .pro-con-three .one {
+        width: 85vw;
+
+    }
+
+    /* //about */
+
+    .about {
+        width: 90vw;
+    }
+
+    .aboutct .abtleft {
+        height: 45vh;
+        top: -3rem;
+        width: 79vw;
+        padding: 1rem;
+        left: 1.2rem;
+    }
+
+    .fo-con-left p {
+        left: .0rem;
+        width: 91vw;
+        font-size: .6rem;
+    }
+
+
+}
+
+
+@media only screen and (max-width:314px) {
+    .aboutct .abtleft {
+        height: 60vh;
+        top: 1rem;
+    }
+}

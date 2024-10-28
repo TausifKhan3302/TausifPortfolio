@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Mooli&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: "Mooli", sans-serif;
+            font-style: normal;
+
+        }
+
+        .maincon {
+            height: 100vh;
+            width: 100vw;
+            background-image: url(joke.jpg);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        nav {
+            height: 8vh;
+            width: 100vw;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgba(128, 128, 128, 0.315);
+            position: fixed;
+        }
+
+        nav .logo {
+            font-weight: 800;
+            font-size: 1.3rem;
+            position: relative;
+            left: 2rem;
+            filter: drop-shadow(2px 2px 1px rgb(2, 134, 101));
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 20vw;
+            position: relative;
+            right: 7rem;
+            font-weight: 800;
+            font-size: 1rem;
+        }
+
+        nav ul li {
+            list-style: none;
+            filter: drop-shadow(2px 2px 1px rgb(2, 134, 101));
+        }
+
+        nav ul li:hover {
+            color: white;
+            transition: .3 s;
+        }
+
+        .con {
+            width: 50vw;
+            height: 40vh;
+            background-color: rgba(0, 0, 0, 0.452);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        button {
+            padding: 8px 15px;
+            width: 6vw;
+            font-weight: 800;
+            font-size: 1rem;
+            border-radius: 10px;
+            border: 2px solid green;
+            filter: drop-shadow(4px 4px 2px black);
+        }
+
+        button:hover {
+            color: white;
+            border: 2px solid rgb(0, 128, 111);
+            transition: 0.3s;
+            background-color: rgb(1, 43, 37);
+        }
+
+        .para {
+            color: white;
+            width: auto;
+            padding: 10px 15px;
+            background-color: rgb(1, 43, 37);
+            filter: drop-shadow(4px 4px 2px black);
+            position: relative;
+            bottom: 3rem;
+        }
+
+        @media only screen and (max-width:1024px) {
+            nav ul {
+                width: 23vw;
+            }
+
+            .para {
+                font-size: 0.7rem;
+            }
+        }
+
+        @media only screen and (max-width:768px) {
+            nav ul {
+                width: 30vw;
+                right: 2rem;
+            }
+
+            .con {
+                width: 66vw;
+            }
+
+            button {
+                width: 11vw;
+            }
+        }
+
+        @media only screen and (max-width:600px) {
+
+            nav ul {
+                width: 33vw;
+            }
+
+            .con {
+                height: 34vh;
+            }
+        }
+
+        @media only screen and (max-width:481px) {
+            nav ul {
+                font-size: .8rem;
+            }
+
+            .para {
+                font-size: 0.5rem;
+            }
+
+            button {
+                padding: 3px 12px;
+                font-size: .7rem;
+            }
+
+
+        }
+
+        @media only screen and (max-width:400px) {
+            nav ul {
+                font-size: 0.7rem;
+                width: 38vw;
+            }
+
+            .con {
+                height: 30vh;
+                width: 90vw;
+            }
+
+            .para {
+                font-size: 0.5rem;
+                bottom: 2rem;
+            }
+
+            button {
+                padding: 4px 8px;
+                font-size: .7rem;
+                width: 14vw;
+            }
+
+            nav .logo {
+                left: .6rem;
+            }
+        }
+
+        @media only screen and (max-width:320px) {
+            nav ul {
+                width: 47vw;
+                right: .7rem;
+            }
+
+            .para {
+                bottom: 1.9rem;
+            }
+
+            button {
+                width: 18vw;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="logo">FunJoke</div>
+        <ul>
+            <li>Home</li>
+            <li>About</li>
+            <li>Contect us</li>
+        </ul>
+    </nav>
+    <div class="maincon">
+        <div class="con">
+            <p class="para"></p>
+            <button id="btn">click</button>
+        </div>
+    </div>
+
+    <script>
+        // with the use of promises :: 
+
+
+        // let para = document.querySelector(".para")
+
+
+        // let apiUrl = "https://icanhazdadjoke.com/"
+
+        // let fetchData = ()=>{
+        //     fetch(apiUrl,{
+        //         headers:{
+        //          Accept:"application/json",   
+        //         },
+        //     })
+        //     .then((res)=>{
+        //         console.log(res)
+        //         return res.json()
+        //     })
+        //     .then((data)=>{
+        //         console.log(data.joke);
+        //         para.innerHTML = data.joke
+        //     })
+        //     .catch((error)=>{
+        //         console.log(error)
+        //     })
+        // }
+        // document.getElementById("btn").addEventListener("click",fetchData)
+
+
+
+
+
+
+        // with the use of Async await & try and catch  :: 
+
+
+
+
+
+        let para = document.querySelector(".para")
+        let apiUrl = "https://icanhazdadjoke.com/"
+
+        let fetchApi = async () => {
+            try {
+                let res = await fetch(apiUrl, {
+                    headers: {
+                        Accept: "application/json",
+                    },
+                })
+                let data = await res.json()
+                console.log(data.joke)
+                para.innerHTML = data.joke
+            }
+            catch (error) {
+                console.log(error)
+            }
+        }
+
+        fetchApi()
+        document.getElementById("btn").addEventListener("click", fetchApi)
+
+    </script>
+</body>
+
+</html>
