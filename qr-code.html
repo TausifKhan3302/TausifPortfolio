@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR-Code</title>
+    <link rel="stylesheet" href="qr-code.css">
+    <link rel="stylesheet" href="http://jindo.dev.naver.com/collie">
+</head>
+
+<body>
+    <div class="container">
+        <h1>GENERATE QR CODE</h1>
+        <input type="text" placeholder="Enter text" id="qr-text">
+        <div class="size-con">
+            <label for="size">Select size :</label>
+            <select id="size">
+                <option value="100">100*100</option>
+                <option value="200">200*200</option>
+                <option value="300">300*300</option>
+                <option value="400">400*400</option>
+            </select>
+        </div>
+        <div class="qr-con"></div>
+        <div class="btns">
+            <a href="" class="generate-btn">Generate</a>
+            <a href="" download='qr.pdf' class="download-btn">Download</a>
+        </div>
+    </div>
+
+    <script src="qr-code.js"></script>
+    <script src=https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js></script>
+    
+</body>
+</html>
