@@ -1653,6 +1653,53 @@ nav .mright ul {
 }
 
 
+@media only screen and (max-device-width:430px) and (max-device-height : 932px) {
+    .pro-con-two {
+        flex-wrap: wrap;
+        position: relative;
+        top: 10rem;
+    }
+
+    .pro-con-three {
+        top: 20rem;
+    }
+}
+
+@media only screen and (max-device-width:390px) and (max-device-height : 844px) {
+    .pro-con-two {
+        flex-wrap: wrap;
+        position: relative;
+        top: 9rem;
+    }
+
+    .pro-con-three {
+        top: 18rem;
+    }
+}
+@media only screen and (max-device-width:375px) and (max-device-height : 667px) {
+    .pro-con-two {
+        flex-wrap: wrap;
+        position: relative;
+        top: 7rem;
+    }
+
+    .pro-con-three {
+        top: 14rem;
+    }
+}
+@media only screen and (max-device-width:360px) and (max-device-height : 740px) {
+    .pro-con-two {
+        flex-wrap: wrap;
+        position: relative;
+        top: 8rem;
+    }
+
+    .pro-con-three {
+        top: 16rem;
+    }
+}
+
+
 @media only screen and (max-width:425px) {
     .myphoto {
         width: 61vw;
@@ -1890,6 +1937,7 @@ nav .mright ul {
 
     }
 }
+
 
 
 
